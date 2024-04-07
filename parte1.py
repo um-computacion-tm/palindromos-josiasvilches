@@ -13,7 +13,7 @@ def is_palindrome(mystring):
     for indice in range (0, len(mystring)):
         print(mystring[indice]+ " -> " + mystring[-(indice +1)])
         if mystring[indice] != mystring[-(indice +1)]:
-            print("mepa que no es")
+            print("no es palíndromo")
             return False
     return True
 
@@ -26,6 +26,15 @@ class TestPalindrome(unittest.TestCase):
         self.assertEqual(resultado, False)
     def test_c(self):
         resultado = is_palindrome('neuquen')
+        self.assertEqual(resultado, True)
+    def test_d(self):
+
+        self.assertEqual(is_palindrome('quequen'), False)
+    def test_e(self):
+        resultado = is_palindrome('abbc')
+        self.assertEqual(resultado, False)
+    def test_f(self):
+        resultado = is_palindrome('acbbca')
         self.assertEqual(resultado, True)
 
 unittest.main()
